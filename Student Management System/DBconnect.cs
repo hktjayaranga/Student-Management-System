@@ -15,7 +15,7 @@ namespace Student_Management_System
     internal class DBconnect
     {
         //to create connection
-        MySqlConnection connect = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=studentdb");
+        MySqlConnection connect = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=studentdb;AllowUserVariables=True");
 
         //go get connection
         public MySqlConnection getConnection

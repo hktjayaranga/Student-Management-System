@@ -31,6 +31,7 @@ namespace Student_Management_System
         {
             panel_slide = new Panel();
             button_exit = new Button();
+            button_dashboard = new Button();
             panel_scoreSubmenu = new Panel();
             button_scorePrint = new Button();
             button_manageScore = new Button();
@@ -50,22 +51,24 @@ namespace Student_Management_System
             panel_logo = new Panel();
             label3 = new Label();
             label1 = new Label();
-            panel_cover = new Panel();
+            panel_main = new Panel();
             pictureBox2 = new PictureBox();
-            panel3 = new Panel();
-            label10 = new Label();
-            label8 = new Label();
+            panel4 = new Panel();
             label9 = new Label();
+            label10 = new Label();
             comboBox1 = new ComboBox();
+            label_femaleStd = new Label();
             label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
+            label_totalStd = new Label();
+            label_maleStd = new Label();
             panel2 = new Panel();
+            panel3 = new Panel();
             pictureBox1 = new PictureBox();
-            label_role = new Label();
+            label6 = new Label();
             label_user = new Label();
-            label4 = new Label();
+            label_role = new Label();
             label2 = new Label();
+            panel_cover = new Panel();
             panel1 = new Panel();
             label11 = new Label();
             panel_slide.SuspendLayout();
@@ -73,11 +76,13 @@ namespace Student_Management_System
             panel_courseSubmenu.SuspendLayout();
             panel_stdSubmenu.SuspendLayout();
             panel_logo.SuspendLayout();
-            panel_cover.SuspendLayout();
+            panel_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel_cover.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,6 +91,7 @@ namespace Student_Management_System
             panel_slide.AutoScroll = true;
             panel_slide.BackColor = SystemColors.MenuHighlight;
             panel_slide.Controls.Add(button_exit);
+            panel_slide.Controls.Add(button_dashboard);
             panel_slide.Controls.Add(panel_scoreSubmenu);
             panel_slide.Controls.Add(button_score);
             panel_slide.Controls.Add(panel_courseSubmenu);
@@ -106,15 +112,33 @@ namespace Student_Management_System
             button_exit.FlatAppearance.BorderSize = 0;
             button_exit.FlatStyle = FlatStyle.Flat;
             button_exit.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button_exit.Location = new Point(0, 749);
+            button_exit.Location = new Point(0, 799);
             button_exit.Margin = new Padding(4, 3, 4, 3);
             button_exit.Name = "button_exit";
             button_exit.Padding = new Padding(20, 0, 0, 0);
             button_exit.Size = new Size(267, 50);
-            button_exit.TabIndex = 6;
+            button_exit.TabIndex = 7;
             button_exit.Text = "Exit";
             button_exit.TextAlign = ContentAlignment.MiddleLeft;
             button_exit.UseVisualStyleBackColor = true;
+            button_exit.Click += button1_Click;
+            // 
+            // button_dashboard
+            // 
+            button_dashboard.Dock = DockStyle.Top;
+            button_dashboard.FlatAppearance.BorderSize = 0;
+            button_dashboard.FlatStyle = FlatStyle.Flat;
+            button_dashboard.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button_dashboard.Location = new Point(0, 749);
+            button_dashboard.Margin = new Padding(4, 3, 4, 3);
+            button_dashboard.Name = "button_dashboard";
+            button_dashboard.Padding = new Padding(20, 0, 0, 0);
+            button_dashboard.Size = new Size(267, 50);
+            button_dashboard.TabIndex = 6;
+            button_dashboard.Text = "Dashboard";
+            button_dashboard.TextAlign = ContentAlignment.MiddleLeft;
+            button_dashboard.UseVisualStyleBackColor = true;
+            button_dashboard.Click += button_exit_Click;
             // 
             // panel_scoreSubmenu
             // 
@@ -408,174 +432,197 @@ namespace Student_Management_System
             label1.TabIndex = 3;
             label1.Text = "Welcome to School";
             // 
-            // panel_cover
+            // panel_main
             // 
-            panel_cover.Controls.Add(pictureBox2);
-            panel_cover.Controls.Add(panel3);
-            panel_cover.Controls.Add(panel2);
-            panel_cover.Controls.Add(panel1);
-            panel_cover.Dock = DockStyle.Fill;
-            panel_cover.Location = new Point(288, 0);
-            panel_cover.Name = "panel_cover";
-            panel_cover.Size = new Size(894, 603);
-            panel_cover.TabIndex = 1;
+            panel_main.Controls.Add(pictureBox2);
+            panel_main.Controls.Add(panel4);
+            panel_main.Controls.Add(panel2);
+            panel_main.Controls.Add(panel_cover);
+            panel_main.Cursor = Cursors.Cross;
+            panel_main.Dock = DockStyle.Fill;
+            panel_main.Location = new Point(288, 0);
+            panel_main.Name = "panel_main";
+            panel_main.Size = new Size(894, 603);
+            panel_main.TabIndex = 1;
             // 
             // pictureBox2
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = Properties.Resources.close_up_blurred_books;
-            pictureBox2.Location = new Point(0, 118);
+            pictureBox2.Location = new Point(0, 130);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(894, 402);
+            pictureBox2.Size = new Size(894, 390);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 3;
+            pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             // 
-            // panel3
+            // panel4
             // 
-            panel3.BackColor = SystemColors.MenuHighlight;
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(comboBox1);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label5);
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 526);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(894, 77);
-            panel3.TabIndex = 2;
-            // 
-            // label10
-            // 
-            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label10.AutoSize = true;
-            label10.Location = new Point(462, 14);
-            label10.Name = "label10";
-            label10.Size = new Size(145, 23);
-            label10.TabIndex = 9;
-            label10.Text = "Select Class : ";
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label8.AutoSize = true;
-            label8.Location = new Point(727, 45);
-            label8.Name = "label8";
-            label8.Size = new Size(101, 23);
-            label8.TabIndex = 8;
-            label8.Text = "Female : ";
+            panel4.BackColor = SystemColors.MenuHighlight;
+            panel4.Controls.Add(label9);
+            panel4.Controls.Add(label10);
+            panel4.Controls.Add(comboBox1);
+            panel4.Controls.Add(label_femaleStd);
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(label_totalStd);
+            panel4.Controls.Add(label_maleStd);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(0, 526);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(894, 77);
+            panel4.TabIndex = 3;
             // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new Point(613, 45);
+            label9.ForeColor = SystemColors.ButtonHighlight;
+            label9.Location = new Point(746, 45);
             label9.Name = "label9";
-            label9.Size = new Size(76, 23);
-            label9.TabIndex = 7;
-            label9.Text = "Male : ";
+            label9.Size = new Size(101, 23);
+            label9.TabIndex = 8;
+            label9.Text = "Female : ";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.ForeColor = SystemColors.ButtonHighlight;
+            label10.Location = new Point(629, 45);
+            label10.Name = "label10";
+            label10.Size = new Size(76, 23);
+            label10.TabIndex = 7;
+            label10.Text = "Male : ";
             // 
             // comboBox1
             // 
-            comboBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(613, 6);
+            comboBox1.Location = new Point(664, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(241, 31);
-            comboBox1.TabIndex = 3;
+            comboBox1.Size = new Size(203, 31);
+            comboBox1.TabIndex = 6;
+            // 
+            // label_femaleStd
+            // 
+            label_femaleStd.AutoSize = true;
+            label_femaleStd.ForeColor = SystemColors.ButtonHighlight;
+            label_femaleStd.Location = new Point(215, 41);
+            label_femaleStd.Name = "label_femaleStd";
+            label_femaleStd.Size = new Size(101, 23);
+            label_femaleStd.TabIndex = 5;
+            label_femaleStd.Text = "Female : ";
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
-            label7.Location = new Point(124, 45);
+            label7.ForeColor = SystemColors.ButtonHighlight;
+            label7.Location = new Point(503, 7);
             label7.Name = "label7";
-            label7.Size = new Size(101, 23);
-            label7.TabIndex = 6;
-            label7.Text = "Female : ";
+            label7.Size = new Size(155, 23);
+            label7.TabIndex = 4;
+            label7.Text = "Total Student : ";
             // 
-            // label6
+            // label_totalStd
             // 
-            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label6.AutoSize = true;
-            label6.Location = new Point(17, 45);
-            label6.Name = "label6";
-            label6.Size = new Size(76, 23);
-            label6.TabIndex = 5;
-            label6.Text = "Male : ";
+            label_totalStd.AutoSize = true;
+            label_totalStd.ForeColor = SystemColors.ButtonHighlight;
+            label_totalStd.Location = new Point(19, 4);
+            label_totalStd.Name = "label_totalStd";
+            label_totalStd.Size = new Size(155, 23);
+            label_totalStd.TabIndex = 3;
+            label_totalStd.Text = "Total Student : ";
+            label_totalStd.Click += label5_Click;
             // 
-            // label5
+            // label_maleStd
             // 
-            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label5.AutoSize = true;
-            label5.Location = new Point(17, 14);
-            label5.Name = "label5";
-            label5.Size = new Size(163, 23);
-            label5.TabIndex = 4;
-            label5.Text = "Total Students : ";
+            label_maleStd.AutoSize = true;
+            label_maleStd.ForeColor = SystemColors.ButtonHighlight;
+            label_maleStd.Location = new Point(98, 41);
+            label_maleStd.Name = "label_maleStd";
+            label_maleStd.Size = new Size(76, 23);
+            label_maleStd.TabIndex = 2;
+            label_maleStd.Text = "Male : ";
             // 
             // panel2
             // 
             panel2.BackColor = SystemColors.MenuHighlight;
-            panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(label_role);
-            panel2.Controls.Add(label_user);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 44);
+            panel2.Location = new Point(0, 58);
             panel2.Name = "panel2";
-            panel2.Size = new Size(894, 68);
-            panel2.TabIndex = 1;
+            panel2.Size = new Size(894, 66);
+            panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.MenuHighlight;
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(label_user);
+            panel3.Controls.Add(label_role);
+            panel3.Controls.Add(label2);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(894, 66);
+            panel3.TabIndex = 3;
+            panel3.Paint += panel3_Paint;
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.artbreeder_portraits_sg2_2025_03_22T17_02_52_793Z;
-            pictureBox1.Location = new Point(825, 6);
+            pictureBox1.Location = new Point(809, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(57, 62);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
+            pictureBox1.Size = new Size(58, 66);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // label_role
+            // label6
             // 
-            label_role.AutoSize = true;
-            label_role.Location = new Point(137, 36);
-            label_role.Name = "label_role";
-            label_role.Size = new Size(73, 23);
-            label_role.TabIndex = 6;
-            label_role.Text = "Admin";
+            label6.AutoSize = true;
+            label6.ForeColor = SystemColors.ButtonHighlight;
+            label6.Location = new Point(69, 34);
+            label6.Name = "label6";
+            label6.Size = new Size(64, 23);
+            label6.TabIndex = 3;
+            label6.Text = "Role :";
             // 
             // label_user
             // 
             label_user.AutoSize = true;
-            label_user.Location = new Point(137, 3);
+            label_user.ForeColor = SystemColors.ButtonHighlight;
+            label_user.Location = new Point(139, 3);
             label_user.Name = "label_user";
             label_user.Size = new Size(67, 23);
-            label_user.TabIndex = 5;
+            label_user.TabIndex = 2;
             label_user.Text = "Thilina";
             // 
-            // label4
+            // label_role
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(67, 36);
-            label4.Name = "label4";
-            label4.Size = new Size(64, 23);
-            label4.TabIndex = 4;
-            label4.Text = "Role :";
+            label_role.AutoSize = true;
+            label_role.ForeColor = SystemColors.ButtonHighlight;
+            label_role.Location = new Point(139, 34);
+            label_role.Name = "label_role";
+            label_role.Size = new Size(73, 23);
+            label_role.TabIndex = 1;
+            label_role.Text = "Admin";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(17, 3);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(19, 3);
             label2.Name = "label2";
             label2.Size = new Size(114, 23);
-            label2.TabIndex = 3;
+            label2.TabIndex = 0;
             label2.Text = "Welcome :";
+            // 
+            // panel_cover
+            // 
+            panel_cover.Controls.Add(panel1);
+            panel_cover.Dock = DockStyle.Top;
+            panel_cover.Location = new Point(0, 0);
+            panel_cover.Name = "panel_cover";
+            panel_cover.Size = new Size(894, 58);
+            panel_cover.TabIndex = 0;
             // 
             // panel1
             // 
@@ -583,26 +630,26 @@ namespace Student_Management_System
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(894, 44);
-            panel1.TabIndex = 0;
+            panel1.Size = new Size(894, 58);
+            panel1.TabIndex = 1;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Century Schoolbook", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.HotTrack;
-            label11.Location = new Point(17, 9);
+            label11.Location = new Point(19, 9);
             label11.Name = "label11";
-            label11.Size = new Size(347, 27);
-            label11.TabIndex = 4;
-            label11.Text = "Mday interanational School";
+            label11.Size = new Size(344, 40);
+            label11.TabIndex = 1;
+            label11.Text = "International School";
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1182, 603);
-            Controls.Add(panel_cover);
+            Controls.Add(panel_main);
             Controls.Add(panel_slide);
             Font = new Font("Century Gothic", 12F);
             Margin = new Padding(4, 3, 4, 3);
@@ -610,19 +657,22 @@ namespace Student_Management_System
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += MainForm_Load;
             panel_slide.ResumeLayout(false);
             panel_scoreSubmenu.ResumeLayout(false);
             panel_courseSubmenu.ResumeLayout(false);
             panel_stdSubmenu.ResumeLayout(false);
             panel_logo.ResumeLayout(false);
             panel_logo.PerformLayout();
-            panel_cover.ResumeLayout(false);
+            panel_main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel_cover.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -648,26 +698,29 @@ namespace Student_Management_System
         private Button button_manageCourse;
         private Button button_newCourse;
         private Button button_course;
-        private Button button_exit;
-        private Panel panel_cover;
+        private Button button_dashboard;
         private Label label1;
         private Label label3;
-        private Panel panel3;
+        private Panel panel_main;
+        private Panel panel4;
         private Panel panel2;
-        private Panel panel1;
+        private Panel panel3;
         private Label label2;
-        private Label label4;
-        private Label label5;
-        private Label label_role;
-        private Label label_user;
-        private Label label7;
+        private Panel panel_cover;
+        private Panel panel1;
         private Label label6;
-        private Label label10;
-        private Label label8;
+        private Label label_user;
+        private Label label_role;
+        private Label label_totalStd;
+        private Label label_maleStd;
         private Label label9;
+        private Label label10;
         private ComboBox comboBox1;
-        private PictureBox pictureBox2;
+        private Label label_femaleStd;
+        private Label label7;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
         private Label label11;
+        private Button button_exit;
     }
 }

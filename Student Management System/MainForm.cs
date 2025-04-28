@@ -2,6 +2,7 @@ namespace Student_Management_System
 {
     public partial class MainForm : Form
     {
+        StudentClass student = new StudentClass();
         public MainForm()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace Student_Management_System
 
         private void button_registration_Click(object sender, EventArgs e)
         {
+            openChildForm(new RegistrationForm());
             //...
             //...Your code
             //..
@@ -54,6 +56,7 @@ namespace Student_Management_System
 
         private void button_manageStd_Click(object sender, EventArgs e)
         {
+            openChildForm(new ManageStudentForm());
             //...
             //...Your code
             //..
@@ -139,6 +142,61 @@ namespace Student_Management_System
         }
         #endregion ScoreSubmenu
 
-        
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            studentCount();
+        }
+
+        //create a function to display student count
+        private void studentCount()
+        {
+            //Display the values
+            label_totalStd.Text = "Total Student : " + student.totalStudent();
+            label_maleStd.Text = "Male : " + student.maleStudent();
+            label_femaleStd.Text = "Female : " + student.femaleStudent();
+        }
+
+        //to show register from in mainform
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_main.Controls.Clear();
+            panel_main.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            panel_main.Controls.Add(panel_cover);
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
